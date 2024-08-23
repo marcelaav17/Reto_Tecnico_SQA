@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="bootstrap-icons/font/bootstrap-icons.css"><!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.11.3/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.11.3/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.11.3/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Serenity BDD Report</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="07cfd0b65e258f4569767b7d15879070f183af5617001a899e80900e161b22b7.html">El Usuario Quiere Hacer Compras</a></span>
+                > <span class="truncate-60"><a
+                    href="abdec3acc16ed4c8215dee8278c66179a42e3c9533cd03b9716eff37d993cc0d.html">Agregar 2 productos al carro de compras. </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 23-08-2024 12:41</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fs-2 bi bi-chat-left-quote large-icon"></i>
+                                    <span class="story-header-title">El Usuario Quiere Hacer Compras </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Agregar 2 productos al carro de compras.
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="6ca404992ec71f35434cfa52f6894b69324693be3a249a6b263aa27ca3c38281.png" title=" Dado que el usuario esta en la p&aacute;gina inicial" width="1860"/>
+                <img src="6ca404992ec71f35434cfa52f6894b69324693be3a249a6b263aa27ca3c38281.png" title=" Automatizador opens the browser at https://www.floristeriamundoflor.com/" width="1860"/>
+                <img src="478104fb14553f1fd5c4c4433908da462b23668ff9cc13953fb26b04d2d406e4.png" title=" Dado que el usuario esta en la p&aacute;gina inicial (completed)" width="1860"/>
+                <img src="e64547bb4ef1dfa7ddc7938583a6c9a253480fb6d564f29ca7a683dde69641df.png" title=" Cuando el usuario agrega productos en el carrito de compras" width="1860"/>
+                <img src="e64547bb4ef1dfa7ddc7938583a6c9a253480fb6d564f29ca7a683dde69641df.png" title=" Automatizador verificar compra" width="1860"/>
+                <img src="e64547bb4ef1dfa7ddc7938583a6c9a253480fb6d564f29ca7a683dde69641df.png" title=" Automatizador clicks on  boton categoria amor" width="1860"/>
+                <img src="e2f8fcafe87c8f8197abc824fda78aa2cc0ca7db9fddb97d3224a67526d78b3d.png" title=" Automatizador clicks on  boton categoria amor" width="1860"/>
+                <img src="d7e564ce0f05e0eb643c3700391e5a256093e2180f0aef84c5ba01c6cd2db1bc.png" title=" Automatizador clicks on  boton categoria amor (completed)" width="1860"/>
+                <img src="d7e564ce0f05e0eb643c3700391e5a256093e2180f0aef84c5ba01c6cd2db1bc.png" title=" Automatizador clicks on  Pedido 1" width="1860"/>
+                <img src="579349ad06a4beed95ebda6bbadbe6f786af3ea220304e0a98dbfed0dd6f9389.png" title=" Automatizador clicks on  Pedido 1 (completed)" width="1860"/>
+                <img src="579349ad06a4beed95ebda6bbadbe6f786af3ea220304e0a98dbfed0dd6f9389.png" title=" Automatizador clicks on  a&ntilde;adir al carrito" width="1860"/>
+                <img src="525e9d4e6f3b3104380854ee134a34a991474e8adeb36a25633aa304b4f0d8a1.png" title=" Automatizador clicks on  a&ntilde;adir al carrito" width="1860"/>
+                <img src="d9a2274763f4f75566cfe96cfed6929bb2900bc48cb195bb9336e8cb5cbb78a1.png" title=" Automatizador clicks on  a&ntilde;adir al carrito (completed)" width="1860"/>
+                <img src="29b3af16d19c5572c488ac8e3faaadff20f2818bd91158224223c785deafa5aa.png" title=" Automatizador clicks on  boton menu principal" width="1860"/>
+                <img src="e10819165f46d05cc1776689f4cd7ecc415c9668c3b07d1f308139173f983a95.png" title=" Automatizador clicks on  boton menu principal" width="1860"/>
+                <img src="1983d4574da259e452f5cbb185ec076dde8853e0be9d59347f95cee2e80c7d40.png" title=" Automatizador clicks on  boton menu principal (completed)" width="1860"/>
+                <img src="1983d4574da259e452f5cbb185ec076dde8853e0be9d59347f95cee2e80c7d40.png" title=" Automatizador clicks on  Pedido 2" width="1860"/>
+                <img src="3c18c82b22ddb21925d3d05a13de3f4317fc9931f7372ef5f34141e14ca00201.png" title=" Automatizador clicks on  Pedido 2" width="1860"/>
+                <img src="2c094cac4a06754699b04041e99641f2b8a2b69288e7ceb96cd020686e159bca.png" title=" Automatizador clicks on  Pedido 2 (completed)" width="1860"/>
+                <img src="8d07cfb3029ac4bccfd6b9c39aafe36e0246c4b351a7b3dcbaa7ed8519626549.png" title=" Automatizador clicks on  a&ntilde;adir al carrito" width="1860"/>
+                <img src="ea6318fd63312929d0100f2c89f6c6cd5118957ca5fbd581ef8547187a159e09.png" title=" Automatizador clicks on  a&ntilde;adir al carrito" width="1860"/>
+                <img src="d194b500c75262d8779aa99dc3e78b54ac9803dc4f4248e389f33d29a7bcc7c3.png" title=" Automatizador clicks on  a&ntilde;adir al carrito (completed)" width="1860"/>
+                <img src="d194b500c75262d8779aa99dc3e78b54ac9803dc4f4248e389f33d29a7bcc7c3.png" title=" Automatizador verificar compra (completed)" width="1860"/>
+                <img src="63cb5c54e3623e90cbc0ae1428a97491cc2eb872834520f3152816497219c619.png" title=" Cuando el usuario agrega productos en el carrito de compras (completed)" width="1860"/>
+                <img src="1165273e84766006312ed6d6b5c3e5aa2150801b55ecb571065ea5886eedb3ae.png" title=" Entonces el usuario completa compra &quot;MDF 00010&rdquo; se ha a&ntilde;adido a tu carrito. &quot;" width="1860"/>
+                <img src="1165273e84766006312ed6d6b5c3e5aa2150801b55ecb571065ea5886eedb3ae.png" title=" Then validar respuesta should be (true)" width="1860"/>
+                <img src="f85ef6cf7f5f02ddd7c5cc35309673e98a0dadfe03d3e4550ed8dd3c4a94d1cc.png" title=" Then validar respuesta should be (true) (completed)" width="1860"/>
+                <img src="1165273e84766006312ed6d6b5c3e5aa2150801b55ecb571065ea5886eedb3ae.png" title=" Entonces el usuario completa compra &quot;MDF 00010&rdquo; se ha a&ntilde;adido a tu carrito. &quot; (completed): <span class='success-color'>SUCCESS</span>" width="1860"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 3.3.4</span>
+</div>
+</body>
+</html>
